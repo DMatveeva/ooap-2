@@ -1,10 +1,12 @@
+package task_1;
+
 public class Concert {
     public static void playConcert() {
         Musician pianist = new Pianist();
         Musician violinist = new Violinist();
 
-        pianist.play(); // применяется полиморфизм, т.к. переменная pianist типа Musician, но метод выведет I play piano
-        violinist.play(); // применяется полиморфизм, т.к. переменная violinist типа Musician, но метод выведет I play violin
+        pianist.play(); // применяется полиморфизм, т.к. переменная pianist типа task_1.Musician, но метод выведет I play piano
+        violinist.play(); // применяется полиморфизм, т.к. переменная violinist типа task_1.Musician, но метод выведет I play violin
     }
 }
 
@@ -24,7 +26,7 @@ abstract class Musician { // класс представляет собой АТ
 
     public Instrument getInstrument() {
         return instrument;
-    };
+    }
 }
 
 class Pianist extends Musician { // класс представляет собой АТД Пианист, который является потомком класса Музыкант (наследование)
