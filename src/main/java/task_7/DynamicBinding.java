@@ -5,6 +5,8 @@ public class DynamicBinding {
     public static void main(String[] args) {
         Vehicle bike = new Bicycle();
         bike.go(); // здесь применяется динамическое связывание
+
+        Vehicle car = new Car();
     }
 }
 
@@ -19,8 +21,8 @@ class Bicycle extends Vehicle {
     }
 }
 
-class Car {
-    void go() {
+class Car extends Vehicle {
+    public void go() {
         System.out.println("Drive a car");
     }
 }
