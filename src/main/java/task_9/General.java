@@ -8,14 +8,6 @@ import java.io.ObjectInput;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-/*
--- копирование объекта (копирование содержимого одного объекта в другой существующий, включая DeepCopy -- глубокое рекурсивное дублирование, подразумевающее также копирование содержимого объектов, вложенных в копируемый объект через его поля, атрибуты);
--- клонирование объекта (создание нового объекта и глубокое копирование в него исходного объекта);
--- сравнение объектов (включая глубокий вариант);
--- сериализация/десериализация (перевод в формат, подходящий для удобного ввода-вывода, как правило в строковый тип, и восстановление из него);
--- печать (наглядное представление содержимого объекта в текстовом формате);
--- проверка типа (является ли тип текущего объекта указанным типом);
--- получение реального типа объекта (непосредственного класса, экземпляром которого он был создан).*/
 public class General implements Cloneable, Comparable<General>, java.io.Serializable {
 
     // Для примера добавим поле типа объект, и поле-примитив
@@ -44,7 +36,7 @@ public class General implements Cloneable, Comparable<General>, java.io.Serializ
 
     @Override
     public int compareTo(General o) {
-        if(i == o.i) {
+        if (i == o.i) {
             return field.compareTo(o.field);
         }
         return i - o.i;
@@ -87,4 +79,5 @@ public class General implements Cloneable, Comparable<General>, java.io.Serializ
     }
 }
 
-class Any extends General {}
+class Any extends General {
+}
