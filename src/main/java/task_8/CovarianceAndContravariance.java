@@ -36,7 +36,3 @@ class Flat extends RealEstate{}
 class House extends RealEstate{}
 
 
-
-
-
-
