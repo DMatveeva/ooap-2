@@ -9,7 +9,7 @@ public abstract class General {
 }
 
 class Any extends General {
-    @Override
-    public void copy(General other) { // Здесь ошибка компиляции: cannot override copy in General overridden method is final
-    }
+//    @Override
+//    public void copy(General other) { // Здесь ошибка компиляции: cannot override copy in General overridden method is final
+//    }
 }
