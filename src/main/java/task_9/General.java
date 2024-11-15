@@ -77,7 +77,6 @@ public class General implements Cloneable, Comparable<General>, java.io.Serializ
     public Class<?> getType() {
         return this.getClass();
     }
-}
-
-class Any extends General {
+    //must be overrriden
+    public General sum(General genearl2) { return new General(); }
 }
