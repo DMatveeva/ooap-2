@@ -1,0 +1,28 @@
+Наследование реализации.
+
+Есть родительский класс AbstractStringBuilder, и его потомки StringBuffer, StringBuilder.
+Они полностью наследуют реализацию методов из AbstractStringBuilder, но StringBuffer добавляет для методов синхронизацию.
+class AbstractStringBuilder {
+    public AbstractStringBuilder append(String str) {
+        if (str == null)
+            return appendNull();
+        int len = str.length();
+        ensureCapacityInternal(count + len);
+        str.getChars(0, len, value, count);
+        count += len;
+        return this;
+    }
+}
+
+class StringBuffer {
+   @Override
+    public synchronized StringBuffer append(String str) {
+        toStringCache = null;
+        super.append(str);
+        return this;
+    }
+}
+
+Льготное наследование.
+Есть родительский класс Number.
+У него есть наследники Long, Integer и т.д. которые реализуют конкретные типы чисел и реализуют методы Number.
